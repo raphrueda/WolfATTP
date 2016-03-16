@@ -12,8 +12,13 @@ Please note: This project had a limited timeline and was developed to be a proto
 
 # Instructions
 Developed for Linux and OSX
+
 1. Open currATTPFrozen/WOLF.jar
+
 2. Open the currATTPFrozen/data/GermanCompanies.csv tick file and click Load. This step may take up to a minute depending on the machine. The company profile tab should now be filled with the tick data. You can sort by company and use the drag n drop navigation box to narrow in on a specific time span.
+
 3. Input a start and end year for the simulation. Choose a strategy from the preset list and fill in the parameters. Multiple parameters are accepted and are input as comma separated values. Click run when ready. This may take up to a minute depending on the machine.
+
 4a. An excel spreadsheet or csv file will be generated on demand containing the strategy output if user's prefer that medium.
+
 4b. The tab will automatically switch to strategy profiles. Here, you may select one of the run strategies, a company of interest and an initial investment. Click Run to see the profit/loss made from this transaction.
