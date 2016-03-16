@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.collections.*?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <bottom>
+      <HBox style="-fx-background-color: #B8B8B8;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Wolf of SENG ATTP V2.0" />
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="_File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="_Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Tutorial" />
+                        <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <StackPane prefHeight="100.0" prefWidth="73.0">
+                     <children>
+                        <Label text="Step 1">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </StackPane>
+                  <GridPane hgap="8.0" prefHeight="100.0" prefWidth="292.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="41.0" minHeight="0.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <GridPane hgap="10.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="8.0" prefWidth="40.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="153.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="openBtn" mnemonicParsing="false" onAction="#openBtnClicked" prefHeight="25.0" prefWidth="100.0" text="Open File" />
+                              <Label fx:id="dataPath" text="No file selected." GridPane.columnIndex="1" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </GridPane>
+                        <GridPane hgap="10.0" prefHeight="71.0" prefWidth="259.0" vgap="8.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="33.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="26.0" minHeight="5.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Strategy 2 (optional)" translateY="-5.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                              <ChoiceBox fx:id="strategy2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String />
+                                          <String fx:value="Wolf of SENG" />
+                                          <String fx:value="BuyHard" />
+                                          <String fx:value="Aurora" />
+                                      </FXCollections>
+                                  </items>
+                              </ChoiceBox>
+                              <ChoiceBox fx:id="strategy1" prefWidth="150.0" GridPane.rowIndex="1">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Wolf of SENG" />
+                                          <String fx:value="BuyHard" />
+                                          <String fx:value="Aurora" />
+                                      </FXCollections>
+                                  </items>
+                              </ChoiceBox>
+                              <Label text="Strategy 1" translateY="-5.0" GridPane.halignment="CENTER" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <StackPane prefHeight="100.0" prefWidth="50.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="35.0" text="Step 2" />
+                     </children>
+                  </StackPane>
+                  <GridPane hgap="10.0" prefHeight="100.0" prefWidth="381.0" vgap="8.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="78.0" minWidth="10.0" prefWidth="56.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="106.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0" minWidth="10.0" prefWidth="59.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="109.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="Start Year:" GridPane.halignment="RIGHT" />
+                        <Label text="End Year:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label text="N Value:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                        <Label text="Threshold:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <TextField fx:id="startInput" prefHeight="25.0" prefWidth="129.0" promptText="e.g. 2005" GridPane.columnIndex="1" />
+                        <TextField fx:id="endInput" prefHeight="25.0" prefWidth="133.0" promptText="e.g. 2015" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="nInput" promptText="e.g.  4 or 3, 2" GridPane.columnIndex="3" />
+                        <TextField fx:id="thInput" promptText="e.g. 0.1 or 0.5, 0.6" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <StackPane prefHeight="100.0" prefWidth="55.0">
+                     <children>
+                        <Label text="Step 3" />
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="100.0" prefWidth="129.0">
+                     <children>
+                        <Button fx:id="runBtn" mnemonicParsing="false" onAction="#runBtnClicked" prefHeight="59.0" prefWidth="93.0" text="Run" />
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="100.0" prefWidth="70.0">
+                     <children>
+                        <ProgressIndicator fx:id="runIndicator" scaleX="0.5" scaleY="0.5" visible="false">
+                           <StackPane.margin>
+                              <Insets right="15.0" />
+                           </StackPane.margin>
+                        </ProgressIndicator>
+                     </children>
+                  </StackPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #E8E8E8;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="mainStage" prefHeight="410.0" prefWidth="917.0" style="-fx-background-color: #f8f8f8;" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox prefHeight="410.0" prefWidth="390.0">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </HBox.margin>
+               <children>
+                  <StackPane prefHeight="54.0" prefWidth="264.0">
+                     <children>
+                        <Label text="Stats" />
+                     </children>
+                  </StackPane>
+                  <GridPane hgap="10.0" style="-fx-background-color: #b0dda2;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="72.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="124.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Best Strategy" GridPane.halignment="RIGHT" />
+                        <Label text="Best Month" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label text="Worst Month" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <Label fx:id="bestStrategy" text="-" GridPane.columnIndex="1" />
+                        <Label fx:id="bestStrategyBest" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="bestStrategyWorst" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+                  <GridPane hgap="10.0" layoutX="10.0" layoutY="64.0" style="-fx-background-color: #c7aaaa;">
+                     <children>
+                        <Label text="Worst Strategy" GridPane.halignment="RIGHT" />
+                        <Label text="Best Month" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label text="Worst Month" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <Label fx:id="worstStrategy" text="-" GridPane.columnIndex="1" />
+                        <Label fx:id="worstStrategyBest" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="worstStrategyWorst" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="79.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="117.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <Region prefHeight="51.0" prefWidth="226.0" />
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="68.0" prefWidth="226.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="genReport" disable="true" mnemonicParsing="false" onAction="#genReportClicked" prefHeight="55.0" prefWidth="104.0" text="Create Report" />
+                        <ProgressIndicator fx:id="genIndicator" prefHeight="55.0" prefWidth="31.0" visible="false" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

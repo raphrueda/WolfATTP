@@ -1,0 +1,9 @@
+.chart-series-line {
+    -fx-stroke-width: 1px;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.default-color0.chart-series-line { -fx-stroke: #487aae; }

@@ -1,0 +1,7 @@
+False
+WolfofSENG
+4
+.01
+2005
+2006
+C:\Users\Raph\Desktop\seng3011\the-wolf-of-seng\WolfATTP\GermanCompanies_GDAXIComponents-N86146124.csv
