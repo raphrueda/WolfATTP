@@ -1,4 +1,0 @@
-movingAvgTimeWindow=4
-threshold=0.001
-startDate=01-01-2000
-endDate=01-01-2005
