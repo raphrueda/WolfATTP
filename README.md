@@ -24,3 +24,11 @@ From here on out, the application will not behave as expected for WINDOWS users
 4a. An excel spreadsheet or csv file will be generated on demand containing the strategy output if user's prefer that medium.
 
 4b. The tab will automatically switch to strategy profiles. Here, you may select one of the run strategies, a company of interest and an initial investment. Click Run to see the profit/loss made from this transaction.
+
+# Preview
+
+![alt tag](https://puu.sh/qSsX2/ffc0be4dc9.png)
+
+![alt tag](https://puu.sh/qSt2I/d1f5f348f5.png)
+
+![alt tag](https://puu.sh/qSt58/ab6debad29.png)
