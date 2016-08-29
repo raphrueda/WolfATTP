@@ -1,0 +1,7 @@
+ChangeLog for V1.03
+
+Added parameter for filtering by year or year range
+Added feature to handle multi-company TRTH file
+Added more detailed log output
+Added speed optimisation to calculation
+Fixed rounding errors

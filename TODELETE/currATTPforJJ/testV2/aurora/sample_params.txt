@@ -1,0 +1,5 @@
+start_date = 31-Jan-2000
+end_date = 08-May-2001
+moving_average_window = 3
+threshold = 0.0053
+output_dir = output.csv

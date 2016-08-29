@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.collections.*?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attp.Controller">
+    <bottom>
+        <HBox style="-fx-background-color: #B8B8B8;" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Wolf of SENG ATTP V2.0" />
+            </children>
+            <padding>
+                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+            </padding>
+        </HBox>
+    </bottom>
+    <top>
+        <VBox prefHeight="173.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="_File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Exit" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="_Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Tutorial" />
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <HBox alignment="CENTER_RIGHT" prefHeight="214.0" prefWidth="1024.0">
+                    <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="148.0" prefWidth="244.0">
+                            <children>
+                                <Label text="Step 1: Load Data">
+                                    <padding>
+                                        <Insets bottom="5.0" top="10.0" />
+                                    </padding>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="128.0" prefWidth="199.0">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                            <children>
+                                                <Button fx:id="openBtn" mnemonicParsing="false" onAction="#openBtnClicked" prefHeight="25.0" prefWidth="70.0" text="Open File" />
+                                                <Button fx:id="loadBtn" disable="true" mnemonicParsing="false" onAction="#loadBtnClicked" prefWidth="70.0" text="Load Data">
+                                       <tooltip>
+                                          <Tooltip text="Load the data file into the client" />
+                                       </tooltip></Button>
+                                            </children>
+                                        </VBox>
+                              <VBox alignment="CENTER" prefHeight="116.0" prefWidth="102.0" spacing="10.0">
+                                 <children>
+                                              <Label fx:id="dataPath" prefHeight="23.0" prefWidth="85.0" text="No file selected.">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin></Label>
+                                    <ProgressIndicator fx:id="profileProgress" prefHeight="28.0" prefWidth="55.0" visible="false" />
+                                 </children>
+                              </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <VBox alignment="TOP_CENTER" prefHeight="152.0" prefWidth="576.0">
+                            <children>
+                                <Label text="Step 2: Configure Strategies">
+                                    <padding>
+                                        <Insets bottom="5.0" top="10.0" />
+                                    </padding>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="115.0" prefWidth="541.0" spacing="10.0">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="85.0" prefWidth="108.0">
+                                            <children>
+                                                <GridPane prefHeight="72.0" prefWidth="140.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="77.0" minWidth="10.0" prefWidth="72.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="68.0" minWidth="10.0" prefWidth="55.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <TextField fx:id="startInput" GridPane.columnIndex="1">
+                                             <tooltip>
+                                                <Tooltip text="First year to look at" />
+                                             </tooltip></TextField>
+                                                        <TextField fx:id="endInput" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <tooltip>
+                                                <Tooltip text="Last year to look at" />
+                                             </tooltip></TextField>
+                                                        <Label text="Start Year" GridPane.halignment="RIGHT">
+                                                            <GridPane.margin>
+                                                                <Insets right="5.0" />
+                                                            </GridPane.margin>
+                                                        </Label>
+                                                        <Label text="End Year" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                            <GridPane.margin>
+                                                                <Insets right="5.0" />
+                                                            </GridPane.margin>
+                                                        </Label>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </VBox>
+                                        <Separator opacity="0.3" orientation="VERTICAL" prefHeight="200.0" />
+                                        <VBox alignment="CENTER" prefHeight="147.0" prefWidth="186.0" spacing="3.0">
+                                            <children>
+                                                <GridPane prefHeight="88.0" prefWidth="186.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="79.0" minWidth="10.0" prefWidth="79.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="122.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <TextField fx:id="nInput1" prefHeight="25.0" prefWidth="78.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <tooltip>
+                                                <Tooltip text="Separate multiple N Values with commas" />
+                                             </tooltip></TextField>
+                                                        <Label text="N Value" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                            <GridPane.margin>
+                                                                <Insets right="5.0" />
+                                                            </GridPane.margin>
+                                                        </Label>
+                                                        <Label text="Threshold" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                                            <GridPane.margin>
+                                                                <Insets right="5.0" />
+                                                            </GridPane.margin>
+                                                        </Label>
+                                                        <TextField fx:id="thInput1" prefHeight="25.0" prefWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <tooltip>
+                                                <Tooltip text="Separate multiple Threshold Values with commas" />
+                                             </tooltip></TextField>
+                                                        <ChoiceBox fx:id="strategy1" prefHeight="25.0" prefWidth="145.0" GridPane.columnIndex="1">
+                                                            <items>
+                                                                <FXCollections fx:factory="observableArrayList">
+                                                                    <String fx:value="Wolf of SENG" />
+                                                                    <String fx:value="BuyHard" />
+                                                                    <String fx:value="Aurora" />
+                                                                    <String fx:value="WilliamsR" />
+                                                                </FXCollections>
+                                                            </items>
+                                                        </ChoiceBox>
+                                                        <Label text="Strategy 1" />
+                                                    </children>
+                                                    <padding>
+                                                        <Insets right="20.0" />
+                                                    </padding>
+                                                </GridPane>
+                                            </children>
+                                        </VBox>
+                                        <Separator opacity="0.3" orientation="VERTICAL" prefHeight="200.0" />
+                                        <VBox alignment="CENTER" layoutX="262.0" layoutY="10.0" prefHeight="115.0" prefWidth="186.0" spacing="3.0">
+                                            <children>
+                                                <GridPane prefHeight="88.0" prefWidth="186.0">
+                                                    <children>
+                                                        <TextField fx:id="nInput2" prefHeight="25.0" prefWidth="78.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <tooltip>
+                                                <Tooltip text="Separate multiple N Values with commas" />
+                                             </tooltip></TextField>
+                                                        <Label text="N Value" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                            <GridPane.margin>
+                                                                <Insets right="5.0" />
+                                                            </GridPane.margin>
+                                                        </Label>
+                                                        <Label text="Threshold" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                                            <GridPane.margin>
+                                                                <Insets right="5.0" />
+                                                            </GridPane.margin>
+                                                        </Label>
+                                                        <TextField fx:id="thInput2" prefHeight="25.0" prefWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <tooltip>
+                                                <Tooltip text="Separate multiple Threshold Values with commas" />
+                                             </tooltip></TextField>
+                                                        <ChoiceBox fx:id="strategy2" prefHeight="25.0" prefWidth="145.0" GridPane.columnIndex="1">
+                                                            <items>
+                                                                <FXCollections fx:factory="observableArrayList">
+                                                                    <String fx:value="(optional)" />
+                                                                    <String fx:value="Wolf of SENG" />
+                                                                    <String fx:value="BuyHard" />
+                                                                    <String fx:value="Aurora" />
+                                                                    <String fx:value="WilliamsR" />
+                                                                </FXCollections>
+                                                            </items>
+                                                        </ChoiceBox>
+                                                        <Label text="Strategy 2" />
+                                                    </children>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="79.0" minWidth="10.0" prefWidth="79.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="122.0" />
+                                                    </columnConstraints>
+                                                    <padding>
+                                                        <Insets right="20.0" />
+                                                    </padding>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                </GridPane>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets left="5.0" right="5.0" />
+                                    </VBox.margin>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <VBox alignment="TOP_CENTER" prefHeight="148.0" prefWidth="146.0">
+                            <children>
+                                <Label text="Step 3: Run Strategies">
+                                    <padding>
+                                        <Insets bottom="5.0" top="10.0" />
+                                    </padding>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="116.0" prefWidth="140.0">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="102.0" prefWidth="119.0" spacing="5.0">
+                                            <children>
+                                                <Button fx:id="runBtn" disable="true" mnemonicParsing="false" onAction="#runBtnClicked" prefHeight="33.0" prefWidth="105.0" text="Run">
+                                                    <VBox.margin>
+                                                        <Insets bottom="5.0" />
+                                                    </VBox.margin>
+                                       <tooltip>
+                                          <Tooltip text="Run the strategy(s) with these configurations" />
+                                       </tooltip>
+                                                </Button>
+                                                <Button fx:id="reportBtn" disable="true" mnemonicParsing="false" onAction="#genReportClicked" prefHeight="25.0" prefWidth="105.0" text="Generate Report">
+                                       <tooltip>
+                                          <Tooltip text="Generate excel report from strategy(s)" />
+                                       </tooltip></Button>
+                                                <Button fx:id="csvBtn" disable="true" mnemonicParsing="false" onAction="#genCSVClicked" prefHeight="25.0" prefWidth="105.0" text="Generate CSV">
+                                       <tooltip>
+                                          <Tooltip text="Generate csv dump from strategy(s)" />
+                                       </tooltip></Button>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <ProgressIndicator fx:id="progress" prefHeight="148.0" prefWidth="37.0" visible="false">
+                            <HBox.margin>
+                                <Insets right="10.0" top="25.0" />
+                            </HBox.margin>
+                        </ProgressIndicator>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TabPane fx:id="tabPane" prefHeight="364.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab fx:id="tab1" closable="false" text="Company Profile" />
+                <Tab fx:id="tab2" disable="true" text="Strategy Portfolios">
+                    <content>
+                        <ScrollPane prefHeight="390.0" prefWidth="1024.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="1009.0">
+                                    <children>
+                                        <VBox fx:id="portfolioStage" alignment="TOP_CENTER" layoutX="4.0" layoutY="5.0" maxHeight="1.7976931348623157E308" minHeight="370.0" prefWidth="999.0" spacing="10.0">
+                                 <children>
+                                    <VBox fx:id="portfolio1" prefHeight="210.0" prefWidth="999.0" spacing="10.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="979.0" spacing="10.0">
+                                             <children>
+                                                <Label text="Strategy" />
+                                                <ChoiceBox fx:id="p1StrategySelector" prefHeight="25.0" prefWidth="125.0" />
+                                                <Label text="Comapny">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <ChoiceBox fx:id="p1CompanySelector" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="86.0" />
+                                                <Label alignment="CENTER_RIGHT" text="Initial Investment">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="p1Initial" prefHeight="25.0" prefWidth="73.0" />
+                                                <Button fx:id="p1RunBtn" mnemonicParsing="false" onAction="#p1RunBtnClicked" prefWidth="50.0" text="Run">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <VBox alignment="CENTER" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                                                   <children>
+                                                      <Label prefHeight="43.0" prefWidth="64.0" text="End Cash Position" textAlignment="CENTER" wrapText="true" />
+                                                      <Label fx:id="p1EndCashPositionLbl" text="-" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="30.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox alignment="CENTER" layoutX="774.0" layoutY="10.0" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                                                   <children>
+                                                      <Label prefHeight="43.0" prefWidth="64.0" text="End Position" textAlignment="CENTER" wrapText="true" />
+                                                      <Label fx:id="p1EndPositionLbl" text="-" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" layoutX="815.0" layoutY="10.0" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                                                   <children>
+                                                      <Label prefHeight="43.0" text="Equity" textAlignment="CENTER" wrapText="true" />
+                                                      <Label fx:id="p1EquityLbl" text="-" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <StackPane>
+                                             <children>
+                                                <BarChart fx:id="p1Position" barGap="0.0" categoryGap="5.0" legendSide="LEFT" legendVisible="false" maxHeight="200.0" minHeight="200.0" prefHeight="200.0">
+                                                  <xAxis>
+                                                    <CategoryAxis side="BOTTOM" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis label="Position" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" side="LEFT" />
+                                                  </yAxis>
+                                                   <padding>
+                                                      <Insets right="80.0" />
+                                                   </padding>
+                                                </BarChart>
+                                                <LineChart fx:id="p1CashPosition" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="40.0" layoutY="10.0" legendSide="RIGHT" legendVisible="false" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                   <padding>
+                                                      <Insets left="50.0" />
+                                                   </padding>
+                                                   <xAxis>
+                                                      <CategoryAxis opacity="0.0" side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis label="Cash Position" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" side="RIGHT" />
+                                                   </yAxis>
+                                                </LineChart>
+                                                <ProgressIndicator fx:id="p1Indicator" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" visible="false" />
+                                                <Rectangle fill="#ed591a" height="15.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="-440.0" translateY="29.0" width="15.0" />
+                                                <Rectangle fill="#487aae" height="15.0" layoutX="492.0" layoutY="103.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="442.0" translateY="43.0" width="15.0" />
+                                             </children>
+                                             <padding>
+                                                <Insets left="30.0" right="30.0" />
+                                             </padding>
+                                          </StackPane>
+                                          <Label text="Navigation" />
+                                          <StackPane fx:id="p1Nav" prefHeight="150.0" prefWidth="200.0">
+                                             <padding>
+                                                <Insets left="30.0" right="30.0" />
+                                             </padding>
+                                             <children>
+                                                <BarChart fx:id="p1PositionMap" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" maxHeight="75.0" minHeight="75.0" prefHeight="75.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                  <xAxis>
+                                                    <CategoryAxis maxHeight="0.0" minHeight="0.0" opacity="0.0" prefHeight="0.0" side="BOTTOM" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis maxWidth="30.0" minWidth="30.0" opacity="0.0" prefWidth="30.0" side="LEFT" />
+                                                  </yAxis>
+                                                   <padding>
+                                                      <Insets right="30.0" />
+                                                   </padding>
+                                                </BarChart>
+                                                <LineChart fx:id="p1CashPositionMap" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" maxHeight="75.0" minHeight="75.0" prefHeight="75.0" style="-fx-background-color: transparent;" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                  <xAxis>
+                                                    <CategoryAxis maxHeight="0.0" minHeight="0.0" opacity="0.0" prefHeight="0.0" side="BOTTOM" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis maxWidth="30.0" minWidth="30.0" opacity="0.0" prefWidth="30.0" side="LEFT" />
+                                                  </yAxis>
+                                                   <padding>
+                                                      <Insets right="30.0" />
+                                                   </padding>
+                                                </LineChart>
+                                             </children>
+                                          </StackPane>
+                                       </children>
+                                    </VBox>
+                                    <Separator prefWidth="200.0" />
+                                    <VBox fx:id="portfolio2" layoutX="20.0" layoutY="30.0" prefHeight="210.0" prefWidth="999.0" spacing="10.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="979.0" spacing="10.0">
+                                             <children>
+                                                <Label text="Strategy" />
+                                                <ChoiceBox fx:id="p2StrategySelector" prefHeight="25.0" prefWidth="125.0" />
+                                                <Label text="Comapny">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <ChoiceBox fx:id="p2CompanySelector" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="86.0" />
+                                                <Label alignment="CENTER_RIGHT" text="Initial Investment">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="p2Initial" prefHeight="25.0" prefWidth="73.0" />
+                                                <Button fx:id="p2RunBtn" mnemonicParsing="false" onAction="#p2RunBtnClicked" prefWidth="50.0" text="Run">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <VBox alignment="CENTER" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                                                   <children>
+                                                      <Label prefHeight="43.0" prefWidth="64.0" text="End Cash Position" textAlignment="CENTER" wrapText="true" />
+                                                      <Label fx:id="p2EndCashPositionLbl" text="-" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="30.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox alignment="CENTER" layoutX="774.0" layoutY="10.0" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                                                   <children>
+                                                      <Label prefHeight="43.0" prefWidth="64.0" text="End Position" textAlignment="CENTER" wrapText="true" />
+                                                      <Label fx:id="p2EndPositionLbl" text="-" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" layoutX="815.0" layoutY="10.0" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                                                   <children>
+                                                      <Label prefHeight="43.0" text="Equity" textAlignment="CENTER" wrapText="true" />
+                                                      <Label fx:id="p2EquityLbl" text="-" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <StackPane>
+                                             <children>
+                                                <BarChart fx:id="p2Position" barGap="0.0" categoryGap="5.0" legendSide="LEFT" legendVisible="false" maxHeight="200.0" minHeight="200.0" prefHeight="200.0">
+                                                   <padding>
+                                                      <Insets right="80.0" />
+                                                   </padding>
+                                                   <xAxis>
+                                                      <CategoryAxis side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis label="Position" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" side="LEFT" />
+                                                   </yAxis>
+                                                </BarChart>
+                                                <LineChart fx:id="p2CashPosition" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="40.0" layoutY="10.0" legendSide="RIGHT" legendVisible="false" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                   <padding>
+                                                      <Insets left="50.0" />
+                                                   </padding>
+                                                   <xAxis>
+                                                      <CategoryAxis opacity="0.0" side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis label="Cash Position" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" side="RIGHT" />
+                                                   </yAxis>
+                                                </LineChart>
+                                                <ProgressIndicator fx:id="p2Indicator" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" visible="false" />
+                                                <Rectangle fill="#ed591a" height="15.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="-440.0" translateY="29.0" width="15.0" />
+                                                <Rectangle fill="#487aae" height="15.0" layoutX="492.0" layoutY="103.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="442.0" translateY="43.0" width="15.0" />
+                                             </children>
+                                             <padding>
+                                                <Insets left="30.0" right="30.0" />
+                                             </padding>
+                                          </StackPane>
+                                          <Label text="Navigation" />
+                                          <StackPane fx:id="p2Nav" prefHeight="150.0" prefWidth="200.0">
+                                             <children>
+                                                <BarChart fx:id="p2PositionMap" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" maxHeight="75.0" minHeight="75.0" prefHeight="75.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                   <padding>
+                                                      <Insets right="30.0" />
+                                                   </padding>
+                                                   <xAxis>
+                                                      <CategoryAxis maxHeight="0.0" minHeight="0.0" opacity="0.0" prefHeight="0.0" side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis maxWidth="30.0" minWidth="30.0" opacity="0.0" prefWidth="30.0" side="LEFT" />
+                                                   </yAxis>
+                                                </BarChart>
+                                                <LineChart fx:id="p2CashPositionMap" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" maxHeight="75.0" minHeight="75.0" prefHeight="75.0" style="-fx-background-color: transparent;" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                   <padding>
+                                                      <Insets right="30.0" />
+                                                   </padding>
+                                                   <xAxis>
+                                                      <CategoryAxis maxHeight="0.0" minHeight="0.0" opacity="0.0" prefHeight="0.0" side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis maxWidth="30.0" minWidth="30.0" opacity="0.0" prefWidth="30.0" side="LEFT" />
+                                                   </yAxis>
+                                                </LineChart>
+                                             </children>
+                                             <padding>
+                                                <Insets left="30.0" right="30.0" />
+                                             </padding>
+                                          </StackPane>
+                                       </children>
+                                    </VBox>
+                                    <Separator layoutX="20.0" layoutY="422.0" prefWidth="200.0" />
+                                    <VBox fx:id="portfolio3" layoutX="20.0" layoutY="435.0" prefHeight="210.0" prefWidth="999.0" spacing="10.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="979.0" spacing="10.0">
+                                             <children>
+                                                <Label text="Strategy" />
+                                                <ChoiceBox fx:id="p3StrategySelector" prefHeight="25.0" prefWidth="125.0" />
+                                                <Label text="Comapny">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <ChoiceBox fx:id="p3CompanySelector" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="86.0" />
+                                                <Label alignment="CENTER_RIGHT" text="Initial Investment">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="p3Initial" prefHeight="25.0" prefWidth="73.0" />
+                                                <Button fx:id="p3RunBtn" mnemonicParsing="false" onAction="#p3RunBtnClicked" prefWidth="50.0" text="Run">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <VBox alignment="CENTER" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                                                   <children>
+                                                      <Label prefHeight="43.0" prefWidth="64.0" text="End Cash Position" textAlignment="CENTER" wrapText="true" />
+                                                      <Label fx:id="p3EndCashPositionLbl" text="-" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="30.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox alignment="CENTER" layoutX="774.0" layoutY="10.0" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                                                   <children>
+                                                      <Label prefHeight="43.0" prefWidth="64.0" text="End Position" textAlignment="CENTER" wrapText="true" />
+                                                      <Label fx:id="p3EndPositionLbl" text="-" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" layoutX="815.0" layoutY="10.0" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                                                   <children>
+                                                      <Label prefHeight="43.0" text="Equity" textAlignment="CENTER" wrapText="true" />
+                                                      <Label fx:id="p3EquityLbl" text="-" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <StackPane>
+                                             <children>
+                                                <BarChart fx:id="p3Position" barGap="0.0" categoryGap="5.0" legendSide="LEFT" legendVisible="false" maxHeight="200.0" minHeight="200.0" prefHeight="200.0">
+                                                   <padding>
+                                                      <Insets right="80.0" />
+                                                   </padding>
+                                                   <xAxis>
+                                                      <CategoryAxis side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis label="Position" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" side="LEFT" />
+                                                   </yAxis>
+                                                </BarChart>
+                                                <LineChart fx:id="p3CashPosition" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="40.0" layoutY="10.0" legendSide="RIGHT" legendVisible="false" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                   <padding>
+                                                      <Insets left="50.0" />
+                                                   </padding>
+                                                   <xAxis>
+                                                      <CategoryAxis opacity="0.0" side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis label="Cash Position" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" side="RIGHT" />
+                                                   </yAxis>
+                                                </LineChart>
+                                                <ProgressIndicator fx:id="p3Indicator" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" visible="false" />
+                                                <Rectangle fill="#ed591a" height="15.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="-440.0" translateY="29.0" width="15.0" />
+                                                <Rectangle fill="#487aae" height="15.0" layoutX="492.0" layoutY="103.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="442.0" translateY="43.0" width="15.0" />
+                                             </children>
+                                             <padding>
+                                                <Insets left="30.0" right="30.0" />
+                                             </padding>
+                                          </StackPane>
+                                          <Label text="Navigation" />
+                                          <StackPane fx:id="p3Nav" prefHeight="150.0" prefWidth="200.0">
+                                             <children>
+                                                <BarChart fx:id="p3PositionMap" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" maxHeight="75.0" minHeight="75.0" prefHeight="75.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                   <padding>
+                                                      <Insets right="30.0" />
+                                                   </padding>
+                                                   <xAxis>
+                                                      <CategoryAxis maxHeight="0.0" minHeight="0.0" opacity="0.0" prefHeight="0.0" side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis maxWidth="30.0" minWidth="30.0" opacity="0.0" prefWidth="30.0" side="LEFT" />
+                                                   </yAxis>
+                                                </BarChart>
+                                                <LineChart fx:id="p3CashPositionMap" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" maxHeight="75.0" minHeight="75.0" prefHeight="75.0" style="-fx-background-color: transparent;" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                   <padding>
+                                                      <Insets right="30.0" />
+                                                   </padding>
+                                                   <xAxis>
+                                                      <CategoryAxis maxHeight="0.0" minHeight="0.0" opacity="0.0" prefHeight="0.0" side="BOTTOM" />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis maxWidth="30.0" minWidth="30.0" opacity="0.0" prefWidth="30.0" side="LEFT" />
+                                                   </yAxis>
+                                                </LineChart>
+                                             </children>
+                                             <padding>
+                                                <Insets left="30.0" right="30.0" />
+                                             </padding>
+                                          </StackPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+                                 </padding></VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

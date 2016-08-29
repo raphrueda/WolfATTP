@@ -1,0 +1,6 @@
+:input_csvFile:50.csv\
+:output_csvFile:ordersSTD.csv\
+:returnsInCalculation:4\
+:threshold:0.001\
+:startDate:01-JAN-2006\
+:endDate:31-DEC-2009\

@@ -1,0 +1,31 @@
+Import the data into excel, remove all no trade days
+Now copy and paste these formulas into the corresponding cells.
+note: the cell number address will change depending on the given N. 
+
+formula for returns (col N):
+=(I3-I2)/I2
+
+formula for SMA (col O):
+n = given
+m = (t-n)+1
+t = last time in file
+=sum(Nm:Nt)/n
+
+formula for TSV (col P):
+=O5-O4
+
+formula for TS (col Q):
+TH = given threshold
+IF(P6>TH, "Buy", IF(P6<-TH, "Sell", "Undefined"))
+
+formula for order (col R):
+=IF(OR(Q2 = Q3, Q3 = ”Undefined"),"",Q3)
+
+Save excel file as CSV.
+Then proceed to using diff.pl
+
+in terminal run:
+python momentumStrategy.py sampleData.txt sampleParams.txt
+THEN 
+diff.pl orders.csv testResults1.csv
+

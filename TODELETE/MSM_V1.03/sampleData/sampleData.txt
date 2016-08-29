@@ -1,0 +1,21 @@
+#RIC,Date[L],Time[L],Type,Qualifiers,Open,High,Low,Last,Volume,Open Interest,Settle,Data Source
+BHP.AX,23-JAN-2000,,End Of Day,No Trades,,,,,,,,Verified
+BHP.AX,24-JAN-2000,,End Of Day,,19.509,19.7,19.35,19.39,1978287,,,Verified
+BHP.AX,25-JAN-2000,,End Of Day,,19.007,19.437,19,19.437,3177987,,,Verified
+BHP.AX,26-JAN-2000,,End Of Day,No Trades,,,,,,,,Verified
+BHP.AX,27-JAN-2000,,End Of Day,,19.258,19.4,19.03,19.2,4433236,,,Verified
+BHP.AX,28-JAN-2000,,End Of Day,,19.1,19.27,18.9,19,6623431,,,Verified
+BHP.AX,29-JAN-2000,,End Of Day,No Trades,,,,,,,,Verified
+BHP.AX,30-JAN-2000,,End Of Day,No Trades,,,,,,,,Verified
+BHP.AX,31-JAN-2000,,End Of Day,,18.714,18.81,18.48,18.745,3572005,,,Verified
+BHP.AX,01-FEB-2000,,End Of Day,,18.822,18.85,18.45,18.458,2869382,,,Verified
+BHP.AX,02-FEB-2000,,End Of Day,,18.45,19.1,18.45,18.7,3858483,,,Verified
+BHP.AX,03-FEB-2000,,End Of Day,,18.731,18.95,18.17,18.5,4468485,,,Verified
+BHP.AX,04-FEB-2000,,End Of Day,,18.5,18.75,18.3,18.32,3357287,,,Verified
+BHP.AX,05-FEB-2000,,End Of Day,No Trades,,,,,,,,Verified
+BHP.AX,06-FEB-2000,,End Of Day,No Trades,,,,,,,,Verified
+BHP.AX,07-FEB-2000,,End Of Day,,18.208,18.95,18.2,18.804,2827976,,,Verified
+BHP.AX,08-FEB-2000,,End Of Day,,18.7,19.05,18.7,19,2212790,,,Verified
+BHP.AX,09-FEB-2000,,End Of Day,,19,19,18.3,18.35,2948080,,,Verified
+BHP.AX,10-FEB-2000,,End Of Day,,18.1,18.1,17.5,17.583,9189981,,,Verified
+BHP.AX,11-FEB-2000,,End Of Day,,17.674,17.8,17.5,17.53,4667880,,,Verified

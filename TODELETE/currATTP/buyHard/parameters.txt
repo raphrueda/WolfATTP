@@ -1,0 +1,4 @@
+movingAvgTimeWindow=4
+threshold=0.01
+startDate=01-01-2008
+endDate=01-01-2012

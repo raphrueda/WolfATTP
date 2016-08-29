@@ -1,0 +1,10 @@
+Team Name: The Wolf Of Seng 
+Version 1.03 
+Output Files: orders.csv, log.txt 
+Input File Name: buyHard/input.csv
+Lines successfully loaded from CSV (values in Last column): 3820
+N Value 7 
+TH Value 0.1 
+Start Time 1431161433.07 
+End Time 1431161433.11 
+Execution Time 0.0477631092072 

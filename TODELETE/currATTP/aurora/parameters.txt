@@ -1,0 +1,5 @@
+start_date = 31-Jan-2008
+end_date = 01-Jan-2012
+moving_average_window = 4
+threshold = 0.01
+output_dir = orders.csv

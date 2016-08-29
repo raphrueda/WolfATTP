@@ -1,0 +1,6 @@
+BuyHard
+4
+0.001
+2000
+2005
+/Users/DOGE/Development/the-wolf-of-seng/currATTP/wolfOfSeng/input.csv

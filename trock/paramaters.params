@@ -1,0 +1,7 @@
+:input_csvFile:allBanks.csv\
+:output_csvFile:ordersSTD.csv\
+:output_logFile:log.log\
+:returnsInCalculation:4\
+:threshold:0.001\
+:startDate:01-JAN-1995\
+:endDate:31-DEC-2010\

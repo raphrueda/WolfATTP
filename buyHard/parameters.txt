@@ -1,0 +1,4 @@
+movingAvgTimeWindow=6
+threshold=0.05
+startDate=01-01-2005
+endDate=31-12-2010

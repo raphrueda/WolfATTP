@@ -1,0 +1,20 @@
+
+//The input csv file detailing the price of equity each day
+:input_csvFile:input.csv\
+
+//output csv file
+:output_csvFile:output.csv\
+
+//the output log file
+:output_logFile:TrockAT.log\
+
+//an integer detailing the returns used in the moving average 
+//calculation (from spec)
+:returnsInCalculation:5\
+
+//a decimal >= 0, smaller means more likely to buy and sell
+:threshold:0.005\
+
+//start and end date when trades are to be made
+:startDate:01-JAN-2000\
+:endDate:31-DEC-2014\
