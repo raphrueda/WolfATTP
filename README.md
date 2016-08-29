@@ -16,7 +16,9 @@ Developed for Linux and OSX
 2. Open the WolfATTP/GermanCompanies.csv tick file and click Load. This step may take up to a minute depending on the machine. The company profile tab should now be filled with the tick data. You can sort by company and use the drag n drop navigation box to narrow in on a specific time span.
 
 ==NOTE==
+
 From here on out, the application will not behave as expected for WINDOWS users
+
 ==NOTE==
 
 3. Input a start and end year for the simulation. Choose a strategy from the preset list and fill in the parameters. Multiple parameters are accepted and are input as comma separated values. Click run when ready. This may take up to a minute depending on the machine.
